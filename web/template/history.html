@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your own way!</title>
+</head>
+
+<body>
+    {{range .}}
+    <div id="{{.Name | hastag }}">
+    <h2>{{.Title}}</h2>
+
+    {{range .Story}}
+    <p>{{.}}</p>
+    {{end}}
+
+    <h3>Options: </h3>
+    <ul>
+        {{range .Options}}
+            <li><a href="#{{.Arc | hastag }}">{{.Text}}</a></li>            
+        {{end}}
+    </ul>
+    </div>
+
+    {{end}}
+</body>
+
+</html>
